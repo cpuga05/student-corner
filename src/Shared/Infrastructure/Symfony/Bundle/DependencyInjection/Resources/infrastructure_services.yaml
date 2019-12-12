@@ -1,0 +1,63 @@
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  _instanceof:
+    Shared\Domain\Bus\Command\CommandHandler:
+      tags: ['command.handler']
+    Shared\Domain\Bus\Query\QueryHandler:
+      tags: ['query.handler']
+    Shared\Domain\Bus\Event\DomainEventSubscriber:
+      tags: ['event.subscriber']
+    Shared\Domain\Bus\Event\DomainEventConsumer:
+      tags: ['event.consumer']
+
+  Shared\:
+    resource: '../../../../../*'
+
+  Shared\Infrastructure\Symfony\AddRequestIdToRequestListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+  Shared\Infrastructure\Symfony\ExceptionSubscriber:
+    tags:
+      - { name: kernel.event_subscriber }
+
+  Shared\Infrastructure\Symfony\FormatJsonResponseListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
+
+#  Monolog\Logger:
+#    factory: [Shared\Infrastructure\Log\Monolog\MonologFactory, create]
+#    arguments:
+#      - host: '%elastic_host%'
+#        port: '%elastic_port%'
+#    tags:
+#      - { name: shared.logger }
+#
+#  Shared\Infrastructure\Queue\RabbitMq\RabbitMqConnection:
+#    arguments:
+#      - '%rabbitmq_connection_parameters%'
+#
+#  Shared\Infrastructure\Domain\Bus\Event\RabbitMqEventConsumer:
+#    arguments:
+#      - '@Shared\Infrastructure\Queue\RabbitMq\RabbitMqConnection'
+#      - '%env(RABBITMQ_EXCHANGE)%'
+#      - '%env(RABBITMQ_MAX_RETRIES)%'
+#
+#  Shared\Infrastructure\Domain\Bus\Event\DomainEventConsumerLocator:
+#    arguments: [!tagged event.consumer]
+
+    #CodelyTv\Shared\Infrastructure\Bus\Event\DomainEventMapping:
+    # arguments: [!tagged codely.mooc.subscriber]
+
+    #CodelyTv\Shared\Infrastructure\RabbitMQ\RabbitMQConnection:
+    # arguments:
+    #  - '%rabbitmq_connection_parameters%'
+
+    #codely.infrastructure.async_command_bus:
+    # class: CodelyTv\Shared\Infrastructure\Bus\Command\CommandBusAsync
+    # arguments:
+    #  $pendingRequestsFilePath: '%async_command_bus_pending_requests_file_path%'
+    # lazy: true

@@ -1,0 +1,18 @@
+services:
+#StudentTracker\Application\Service\User\SignUp\SignUpUserCommandHandler:
+#autoconfigure: true
+#autowire: true
+#tags: ['student_tracker.command']
+
+#user.service.sign_up:
+#class: StudentTracker\Application\Service\User\SignUp\SignUpUserService
+#arguments:
+#- '@user.repository.user'
+
+#user.repository.user:
+#class: StudentTracker\Infrastructure\Domain\Model\User\DoctrineUserRepository
+#factory:
+#- '@em'
+#- 'getRepository'
+#arguments:
+#- 'StudentTracker\Domain\Model\User\User'

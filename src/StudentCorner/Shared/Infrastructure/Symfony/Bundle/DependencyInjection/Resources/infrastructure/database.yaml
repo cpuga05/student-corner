@@ -1,0 +1,15 @@
+services:
+  Doctrine\ORM\EntityManager:
+    factory: [StudentCorner\Shared\Infrastructure\Persistence\Doctrine\StudentCornerEntityManagerFactory, create]
+    arguments:
+      - driver: '%student_tracker_database_driver%'
+        host: '%student_tracker_database_host%'
+        port: '%student_tracker_database_port%'
+        dbname: '%student_tracker_database_name%'
+        user: '%student_tracker_database_user%'
+        password: '%student_tracker_database_password%'
+      - '%env(APP_ENV)%'
+    tags:
+      - { name: student_tracker.database }
+
+  #Doctrine\ORM\EntityManagerInterface: '@Doctrine\ORM\EntityManager'

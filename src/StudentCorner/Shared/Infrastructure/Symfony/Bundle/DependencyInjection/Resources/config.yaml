@@ -1,0 +1,2 @@
+parameters:
+  student_corner.root_path: '%kernel.project_dir%/../../src/StudentCorner'

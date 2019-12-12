@@ -1,0 +1,8 @@
+parameters:
+  student_tracker_database_driver: '%env(ST_DRIVER)%'
+  student_tracker_database_host: '%env(ST_HOST)%'
+  student_tracker_database_port: '%env(ST_PORT)%'
+  student_tracker_database_name: '%env(ST_DATABASE)%'
+  student_tracker_database_user: '%env(ST_USER)%'
+  student_tracker_database_password: '%env(ST_PASSWORD)%'
+  slack_video_notification_hook_url: 'https://hooks.slack.com/services/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'

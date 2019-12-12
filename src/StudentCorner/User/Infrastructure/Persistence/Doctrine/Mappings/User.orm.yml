@@ -1,0 +1,14 @@
+StudentCorner\User\Domain\User:
+  type: entity
+  table: users
+  id:
+    id:
+      column: id
+      type: UserId
+  fields:
+    email:
+      column: email
+      type: UserEmail
+    password:
+      column: password
+      type: UserEncryptedPassword

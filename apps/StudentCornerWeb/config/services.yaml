@@ -1,0 +1,18 @@
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  StudentCornerWeb\Controller\:
+    resource: '../src/Controller'
+    tags: ['controller.service_arguments']
+
+  StudentCornerWeb\Command\:
+    resource: '../src/Command'
+    tags: ['console.command']
+
+#  StudentTrackerWeb\Command\RabbitMq\ConfigureRabbitMqCommand:
+#    arguments:
+#      - '@Shared\Infrastructure\Queue\RabbitMq\RabbitMqConfigurator'
+#      - '%env(RABBITMQ_EXCHANGE)%'
+#      - !tagged event.consumer

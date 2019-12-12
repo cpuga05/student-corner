@@ -1,0 +1,4 @@
+imports:
+  - { resource: database.yaml }
+  - { resource: mail.yaml }
+  - { resource: symfony.yaml }

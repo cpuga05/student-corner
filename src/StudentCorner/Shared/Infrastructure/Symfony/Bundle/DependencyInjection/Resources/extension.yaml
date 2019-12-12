@@ -1,0 +1,5 @@
+imports:
+  - { resource: parameters.yaml }
+  #- { resource: modules/mooc_modules.yml }
+  - { resource: services/_services.yaml }
+  - { resource: infrastructure/_infrastructure.yaml }

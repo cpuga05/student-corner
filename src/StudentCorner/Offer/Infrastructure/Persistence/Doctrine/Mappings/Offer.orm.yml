@@ -1,0 +1,26 @@
+StudentCorner\Offer\Domain\Offer:
+  type: entity
+  table: offers
+  id:
+    id:
+      column: id
+      type: OfferId
+  fields:
+    name:
+      column: name
+      type: OfferName
+    school:
+      column: school
+      type: OfferSchool
+    course:
+      column: course
+      type: OfferCourse
+    teacher:
+      column: teacher
+      type: OfferTeacher
+    price:
+      column: price
+      type: OfferPrice
+    userId:
+      column: user_id
+      type: UserId

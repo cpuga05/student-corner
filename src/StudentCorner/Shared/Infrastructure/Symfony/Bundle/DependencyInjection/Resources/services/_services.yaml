@@ -1,0 +1,38 @@
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  _instanceof:
+    Shared\Domain\Bus\Command\CommandHandler:
+      tags: ['command.handler']
+    Shared\Domain\Bus\Query\QueryHandler:
+      tags: ['query.handler']
+    Shared\Domain\Bus\Event\DomainEventSubscriber:
+      tags: ['event.subscriber']
+    Shared\Domain\Bus\Event\DomainEventConsumer:
+      tags: ['event.consumer']
+
+  StudentCorner\:
+    resource: '../../../../../../../*'
+
+  StudentCorner\Shared\Infrastructure\Domain\Bus\Command\SymfonySyncCommandBus:
+    arguments: [!tagged command.handler]
+    lazy: true
+    public: true
+
+  StudentCorner\Shared\Infrastructure\Domain\Bus\Query\SymfonySyncQueryBus:
+    arguments: [!tagged query.handler]
+    lazy: true
+    public: true
+
+  StudentCorner\Shared\Infrastructure\Domain\Bus\Event\SymfonySyncEventBus:
+    arguments: [!tagged event.subscriber]
+    lazy: true
+    public: true
+
+  Shared\Domain\Bus\Command\CommandBus: '@StudentCorner\Shared\Infrastructure\Domain\Bus\Command\SymfonySyncCommandBus'
+  Shared\Domain\Bus\Query\QueryBus: '@StudentCorner\Shared\Infrastructure\Domain\Bus\Query\SymfonySyncQueryBus'
+  Shared\Domain\Bus\Event\EventBus: '@StudentCorner\Shared\Infrastructure\Domain\Bus\Event\SymfonySyncEventBus'
+#  Shared\Domain\Bus\Event\DomainEventPublisher: '@StudentTracker\Infrastructure\Domain\Bus\Event\InMemoryDomainEventPublisher'
+  StudentCorner\User\Domain\Authenticate: '@StudentCorner\User\Infrastructure\SessionAuthenticate'

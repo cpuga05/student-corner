@@ -1,0 +1,13 @@
+sign_in:
+  path: /sign-in
+  controller: StudentCornerWeb\Controller\User\SignInController
+  methods: [GET,POST]
+  defaults:
+    auth: false
+
+sign_out:
+  path: /sign-out
+  controller: StudentCornerWeb\Controller\User\SignOutController
+  methods: [GET]
+  defaults:
+    auth: true

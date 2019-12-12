@@ -1,0 +1,9 @@
+parameters:
+  rabbitmq_host: '%env(RABBITMQ_HOST)%'
+  rabbitmq_port: '%env(RABBITMQ_PORT)%'
+  rabbitmq_vhost: '%env(RABBITMQ_MOOC_VHOST)%'
+  rabbitmq_login: '%env(RABBITMQ_LOGIN)%'
+  rabbitmq_password: '%env(RABBITMQ_PASSWORD)%'
+
+  elastic_host: '%env(ELASTIC_HOST)%'
+  elastic_port: '%env(ELASTIC_PORT)%'

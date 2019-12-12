@@ -1,0 +1,3 @@
+services:
+  PHPMailer\PHPMailer\PHPMailer:
+    factory: [StudentCorner\Shared\Infrastructure\Mail\PhpMailerFactory, create]
