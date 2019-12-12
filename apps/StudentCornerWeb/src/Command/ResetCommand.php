@@ -8,7 +8,6 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Tools\SchemaTool;
 use Shared\Domain\Bus\Command\CommandBus;
-use Shared\Domain\ValueObject\Uuid;
 use StudentCorner\User\Application\SignUp\SignUpUserCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -42,7 +41,7 @@ final class ResetCommand extends Command
         $schemaTool->createSchema($metadata);
         $this->writeLine($output, 'Tables created', $tables);
 
-        $this->commandBus->dispatch(new SignUpUserCommand(Uuid::random()->value(), 'a@a.com', '1234'));
+        $this->commandBus->dispatch(new SignUpUserCommand('a4033f67-d9d2-4ce8-9943-eeea38316e33', 'a@a.com', '1234'));
     }
 
     private function countTables(array $metadata): int

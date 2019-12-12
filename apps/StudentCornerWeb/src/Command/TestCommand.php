@@ -33,7 +33,7 @@ final class TestCommand extends Command
             'DAW',
             'Jose',
             123,
-            'c1bed608-e9dc-4bd1-af3f-8fd9aac51b83'
+            'a4033f67-d9d2-4ce8-9943-eeea38316e33'
         );
 
         $this->commandBus->dispatch($command);

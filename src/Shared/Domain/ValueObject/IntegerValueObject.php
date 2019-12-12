@@ -19,6 +19,16 @@ abstract class IntegerValueObject
         return $value->value() === $this->value();
     }
 
+    public function add(self $value): self
+    {
+        return new static($this->value() + $value->value());
+    }
+
+    public function subtract(self $value): self
+    {
+        return new static($this->value() - $value->value());
+    }
+
     public function value(): int
     {
         return $this->value;

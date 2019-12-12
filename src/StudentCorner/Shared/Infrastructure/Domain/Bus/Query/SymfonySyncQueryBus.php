@@ -15,14 +15,13 @@ use Symfony\Component\Messenger\MessageBus;
 use Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
 use Symfony\Component\Messenger\Stamp\HandledStamp;
 
-final class SymfonySyncQueryBus implements QueryBus
+class SymfonySyncQueryBus implements QueryBus
 {
     /** @var MessageBus */
     private $bus;
 
-    public function __construct(
-        iterable $queryHandlers
-    ) {
+    public function __construct(iterable $queryHandlers)
+    {
         $this->bus = new MessageBus(
             [
                 new HandleMessageMiddleware(new HandlersLocator($this->handlers($queryHandlers))),

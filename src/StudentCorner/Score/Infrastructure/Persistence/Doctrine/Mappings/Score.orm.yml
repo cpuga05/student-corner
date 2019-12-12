@@ -1,0 +1,11 @@
+StudentCorner\Score\Domain\Score:
+  type: entity
+  table: scores
+  id:
+    userId:
+      column: user_id
+      type: UserId
+  fields:
+    point:
+      column: point
+      type: ScorePoint

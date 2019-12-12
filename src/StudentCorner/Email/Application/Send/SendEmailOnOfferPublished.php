@@ -9,7 +9,6 @@ use Shared\Domain\Bus\Query\QueryBus;
 use StudentCorner\Email\Domain\Email;
 use StudentCorner\Email\Domain\EmailBody;
 use StudentCorner\Email\Domain\EmailId;
-use StudentCorner\Email\Domain\EmailSender;
 use StudentCorner\Email\Domain\EmailSubject;
 use StudentCorner\Offer\Domain\OfferPublished;
 use StudentCorner\User\Application\UserResponse;
@@ -18,14 +17,14 @@ use StudentCorner\User\Domain\UserEmail;
 
 final class SendEmailOnOfferPublished implements DomainEventSubscriber
 {
-    /** @var EmailSender */
+    /** @var SendEmailService */
     private $sender;
     /** @var QueryBus */
     private $queryBus;
 
-    public function __construct(EmailSender $sender, QueryBus $queryBus)
+    public function __construct(SendEmailService $service, QueryBus $queryBus)
     {
-        $this->sender = $sender;
+        $this->sender = $service;
         $this->queryBus = $queryBus;
     }
 
@@ -38,13 +37,11 @@ final class SendEmailOnOfferPublished implements DomainEventSubscriber
     {
         /** @var UserResponse $user */
         $user = $this->queryBus->ask(new ViewUserQuery($offerPublished->userId()));
-        $email = new Email(
-            EmailId::random(),
-            new UserEmail($user->email()),
-            new EmailSubject('New offer published'),
-            new EmailBody('You publish new offer: ' . $offerPublished->name())
-        );
+        $id = EmailId::random();
+        $email = new UserEmail($user->email());
+        $subject = new EmailSubject('New offer published');
+        $body = new EmailBody('You publish new offer: ' . $offerPublished->name());
 
-        $this->sender->send($email);
+        $this->sender->__invoke($id, $email, $subject, $body);
     }
 }

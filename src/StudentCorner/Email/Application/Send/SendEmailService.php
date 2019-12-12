@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StudentCorner\Email\Application\Send;
 
+use Shared\Domain\Bus\Event\EventBus;
 use StudentCorner\Email\Domain\Email;
 use StudentCorner\Email\Domain\EmailBody;
 use StudentCorner\Email\Domain\EmailId;
@@ -15,10 +16,13 @@ final class SendEmailService
 {
     /** @var EmailSender */
     private $sender;
+    /** @var EventBus */
+    private $eventBus;
 
-    public function __construct(EmailSender $sender)
+    public function __construct(EmailSender $sender, EventBus $eventBus)
     {
         $this->sender = $sender;
+        $this->eventBus = $eventBus;
     }
 
     public function __invoke(EmailId $id, UserEmail $email, EmailSubject $subject, EmailBody $body): void
