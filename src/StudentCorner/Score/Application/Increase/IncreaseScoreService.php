@@ -28,7 +28,7 @@ final class IncreaseScoreService
         $score = $this->repository->findByUserId($userId);
 
         if (null === $score) {
-            $score = Score::crate($userId);
+            $score = Score::create($userId);
         }
 
         $score->increase($point);

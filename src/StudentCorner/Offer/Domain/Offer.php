@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StudentCorner\Offer\Domain;
 
+use DateTimeImmutable;
 use Shared\Domain\Aggregate\AggregateRoot;
 use StudentCorner\User\Domain\UserId;
 
@@ -23,6 +24,8 @@ final class Offer extends AggregateRoot
     private $price;
     /** @var UserId */
     private $userId;
+    /** @var DateTimeImmutable */
+    private $publishedAt;
 
     public function __construct(
         OfferId $id,
@@ -31,7 +34,8 @@ final class Offer extends AggregateRoot
         OfferCourse $course,
         OfferTeacher $teacher,
         OfferPrice $price,
-        UserId $userId
+        UserId $userId,
+        DateTimeImmutable $publishedAt
     ) {
         $this->id = $id;
         $this->name = $name;
@@ -40,6 +44,7 @@ final class Offer extends AggregateRoot
         $this->teacher = $teacher;
         $this->price = $price;
         $this->userId = $userId;
+        $this->publishedAt = $publishedAt;
     }
 
     public static function publish(
@@ -51,7 +56,7 @@ final class Offer extends AggregateRoot
         OfferPrice $price,
         UserId $userId
     ): self {
-        $offer = new self($id, $name, $school, $course, $teacher, $price, $userId);
+        $offer = new self($id, $name, $school, $course, $teacher, $price, $userId, new DateTimeImmutable());
 
         $offer->record(OfferPublished::create($offer));
 
@@ -91,5 +96,10 @@ final class Offer extends AggregateRoot
     public function userId(): UserId
     {
         return $this->userId;
+    }
+
+    public function publishedAt(): DateTimeImmutable
+    {
+        return $this->publishedAt;
     }
 }

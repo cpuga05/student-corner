@@ -28,13 +28,13 @@ services:
     tags:
       - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
 
-#  Monolog\Logger:
-#    factory: [Shared\Infrastructure\Log\Monolog\MonologFactory, create]
-#    arguments:
-#      - host: '%elastic_host%'
-#        port: '%elastic_port%'
-#    tags:
-#      - { name: shared.logger }
+  Monolog\Logger:
+    factory: [Shared\Infrastructure\Logger\Monolog\MonologFactory, create]
+    arguments:
+      - host: '%elastic_host%'
+        port: '%elastic_port%'
+    tags:
+      - { name: shared.logger }
 #
 #  Shared\Infrastructure\Queue\RabbitMq\RabbitMqConnection:
 #    arguments:

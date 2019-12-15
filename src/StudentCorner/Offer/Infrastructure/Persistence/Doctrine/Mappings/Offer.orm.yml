@@ -24,3 +24,6 @@ StudentCorner\Offer\Domain\Offer:
     userId:
       column: user_id
       type: UserId
+    publishedAt:
+      column: published_at
+      type: datetime_immutable

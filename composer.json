@@ -30,10 +30,13 @@
     "phpmailer/phpmailer": "^6.1",
     "symfony/asset": "^4.4",
     "symfony/form": "^4.4",
-    "symfony/proxy-manager-bridge": "^5.0"
+    "symfony/proxy-manager-bridge": "^5.0",
+    "monolog/monolog": "^2.0",
+    "ruflin/elastica": "^6.1"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
-    "symfony/debug-bundle": "^4.4"
+    "symfony/debug-bundle": "^4.4",
+    "fzaninotto/faker": "^1.9"
   }
 }

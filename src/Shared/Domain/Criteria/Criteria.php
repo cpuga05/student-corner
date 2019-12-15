@@ -32,7 +32,7 @@ final class Criteria
 
     public function hasOrder(): bool
     {
-        return $this->order->isNone();
+        return !$this->order->isNone();
     }
 
     public function plainFilters(): array

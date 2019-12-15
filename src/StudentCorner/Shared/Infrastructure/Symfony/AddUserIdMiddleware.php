@@ -8,7 +8,7 @@ use StudentCorner\User\Domain\Authenticate;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 
-final class SessionAuthMiddleware
+final class AddUserIdMiddleware
 {
     /** @var Authenticate */
     private $authenticate;
@@ -20,21 +20,11 @@ final class SessionAuthMiddleware
 
     public function __invoke(RequestEvent $event): void
     {
-        $shouldAuthenticate = $event->getRequest()->attributes->get('auth', null);
-
-        if (null === $shouldAuthenticate) {
+        if (!$this->authenticate->isAlreadyAuthenticated()) {
             return;
         }
 
-        if ($this->authenticate->isAlreadyAuthenticated() === $shouldAuthenticate) {
-            return;
-        }
-
-        if ($shouldAuthenticate) {
-            $event->setResponse(new RedirectResponse('/sign-in'));
-            return;
-        }
-
-        $event->setResponse(new RedirectResponse('/'));
+        $event->getRequest()->attributes->set('user_id', $this->authenticate->userSecurityToken()->id()->value());
+        $event->getRequest()->request->set('user_id', $this->authenticate->userSecurityToken()->id()->value());
     }
 }

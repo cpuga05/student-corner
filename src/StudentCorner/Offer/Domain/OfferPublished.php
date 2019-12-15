@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace StudentCorner\Offer\Domain;
 
 use Shared\Domain\Bus\Event\DomainEvent;
+use Shared\Domain\Utils;
 
 final class OfferPublished extends DomainEvent
 {
@@ -20,6 +21,8 @@ final class OfferPublished extends DomainEvent
     private $price;
     /** @var string */
     private $userId;
+    /** @var string */
+    private $publishedAt;
 
     public function __construct(
         string $aggregateId,
@@ -29,6 +32,7 @@ final class OfferPublished extends DomainEvent
         string $teacher,
         int $price,
         string $userId,
+        string $publishedAt,
         string $eventId = null,
         string $occurredOn = null
     ) {
@@ -39,6 +43,7 @@ final class OfferPublished extends DomainEvent
         $this->teacher = $teacher;
         $this->price = $price;
         $this->userId = $userId;
+        $this->publishedAt = $publishedAt;
     }
 
     public static function create(Offer $offer): self
@@ -50,13 +55,14 @@ final class OfferPublished extends DomainEvent
             $offer->course()->value(),
             $offer->teacher()->value(),
             $offer->price()->value(),
-            $offer->userId()->value()
+            $offer->userId()->value(),
+            Utils::dateToString($offer->publishedAt())
         );
     }
 
     public function eventName(): string
     {
-        return 'offer.created';
+        return 'offer.published';
     }
 
     public function toPrimitives(): array
@@ -68,6 +74,7 @@ final class OfferPublished extends DomainEvent
             'teacher' => $this->teacher,
             'price' => $this->price,
             'user_id' => $this->userId,
+            'published_at' => $this->publishedAt
         ];
     }
 
@@ -118,5 +125,10 @@ final class OfferPublished extends DomainEvent
     public function userId(): string
     {
         return $this->userId;
+    }
+
+    public function publishedAt(): string
+    {
+        return $this->publishedAt;
     }
 }

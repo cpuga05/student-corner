@@ -11,6 +11,8 @@ use Shared\Domain\Bus\Query\QueryBus;
 use Shared\Domain\Bus\Query\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormFactoryInterface;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 abstract class Controller extends AbstractController
 {
@@ -39,5 +41,18 @@ abstract class Controller extends AbstractController
     protected function ask(Query $query): Response
     {
         return $this->queryBus->ask($query);
+    }
+
+    protected function validForm(FormInterface $form): bool
+    {
+        if ($form->isSubmitted() && $form->isValid()) {
+            return true;
+        }
+
+        foreach ($form->getErrors(true) as $error) {
+            $this->addFlash('error', $error->getMessage());
+        }
+
+        return false;
     }
 }

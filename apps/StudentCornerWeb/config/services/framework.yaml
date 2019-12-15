@@ -15,3 +15,5 @@ framework:
 
 #  form:
 #    enabled: true
+
+  fragments: { path: /_fragmet }

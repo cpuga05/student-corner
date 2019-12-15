@@ -20,19 +20,27 @@ final class Score extends AggregateRoot
         $this->point = $point;
     }
 
-    public static function crate(UserId $userId): self
+    public static function create(UserId $userId): self
     {
-        return new self($userId, ScorePoint::zero());
+        $score = new self($userId, ScorePoint::zero());
+
+        $score->record(ScoreCreated::create($score));
+
+        return $score;
     }
 
     public function increase(ScorePoint $point): void
     {
         $this->point = $this->point->add($point);
+
+        $this->record(ScoreIncreased::create($this));
     }
 
     public function decrease(ScorePoint $point): void
     {
         $this->point = $this->point->subtract($point);
+
+        $this->record(ScoreDecreased::create($this));
     }
 
     public function userId(): UserId

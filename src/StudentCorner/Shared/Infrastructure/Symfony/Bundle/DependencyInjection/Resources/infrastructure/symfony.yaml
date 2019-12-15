@@ -5,4 +5,8 @@ services:
 
   StudentCorner\Shared\Infrastructure\Symfony\SessionAuthMiddleware:
     tags:
-      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+      - { name: kernel.event_listener, event: kernel.request, priority: 1 }
+
+  StudentCorner\Shared\Infrastructure\Symfony\AddUserIdMiddleware:
+    tags:
+      - { name: kernel.event_listener, event: kernel.request }

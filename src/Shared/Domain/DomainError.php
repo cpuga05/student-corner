@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Shared\Domain;
 
 use DomainException;
-use Throwable;
 
 abstract class DomainError extends DomainException
 {
