@@ -12,6 +12,9 @@ up:
 down:
 	docker-compose down
 
+clear:
+	make down && rm -rf var
+
 start-local:
 	php -S localhost:8030 apps/StudentTracker/public/index.php
 

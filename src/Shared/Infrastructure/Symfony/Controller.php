@@ -12,7 +12,6 @@ use Shared\Domain\Bus\Query\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Form\FormInterface;
-use Symfony\Component\HttpFoundation\Request;
 
 abstract class Controller extends AbstractController
 {
