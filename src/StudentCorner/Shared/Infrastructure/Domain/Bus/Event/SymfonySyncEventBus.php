@@ -6,8 +6,8 @@ namespace StudentCorner\Shared\Infrastructure\Domain\Bus\Event;
 
 use Shared\Domain\Bus\Event\DomainEvent;
 use Shared\Domain\Bus\Event\EventBus;
+use Shared\Infrastructure\Symfony\ReorderHandlersLocator;
 use Symfony\Component\Messenger\Exception\NoHandlerForMessageException;
-use Symfony\Component\Messenger\Handler\HandlersLocator;
 use Symfony\Component\Messenger\MessageBus;
 use Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
 
@@ -20,7 +20,7 @@ class SymfonySyncEventBus implements EventBus
     {
         $this->bus = new MessageBus(
             [
-                new HandleMessageMiddleware(new HandlersLocator($this->subscribers($subscribers))),
+                new HandleMessageMiddleware(new ReorderHandlersLocator($this->subscribers($subscribers))),
             ]
         );
     }
