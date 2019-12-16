@@ -1,0 +1,11 @@
+Shared\Domain\Bus\Event\PublishedEvent:
+  type: entity
+  table: event_published_tracker
+  id:
+    channel:
+      column: channel
+      type: string
+  fields:
+    lastEventPublishedId:
+      column: last_event_published_id
+      type: integer

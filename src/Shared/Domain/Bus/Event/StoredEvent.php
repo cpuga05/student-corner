@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Shared\Domain\Bus\Event;
 
 use DateTimeImmutable;
-use Shared\Domain\Utils;
 
 final class StoredEvent
 {
@@ -22,8 +21,13 @@ final class StoredEvent
     /** @var DateTimeImmutable */
     private $occurredOn;
 
-    public function __construct(string $eventId, string $aggregateId, string $name, array $body, DateTimeImmutable $occurredOn)
-    {
+    public function __construct(
+        string $eventId,
+        string $aggregateId,
+        string $name,
+        array $body,
+        DateTimeImmutable $occurredOn
+    ) {
         $this->eventId = $eventId;
         $this->aggregateId = $aggregateId;
         $this->name = $name;

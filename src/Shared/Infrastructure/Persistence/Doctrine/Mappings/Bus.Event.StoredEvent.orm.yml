@@ -1,0 +1,25 @@
+Shared\Domain\Bus\Event\StoredEvent:
+  type: entity
+  table: events
+  id:
+    id:
+      type: integer
+      column: id
+      generator:
+        strategy: AUTO
+  fields:
+    eventId:
+      column: event_id
+      type: string
+    aggregateId:
+      column: aggregate_id
+      type: string
+    name:
+      column: name
+      type: string
+    body:
+      column: body
+      type: json
+    occurredOn:
+      column: occurred_on
+      type: datetime_immutable

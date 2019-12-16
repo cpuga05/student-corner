@@ -2,14 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Shared\Application\Logger;
+namespace Shared\Application\Event\Logger;
 
 use Exception;
 use Shared\Domain\Bus\Event\DomainEvent;
 use Shared\Domain\Bus\Event\DomainEventSubscriber;
 use Shared\Domain\Logger;
 
-use function dump;
 use function get_class;
 use function strrpos;
 use function substr;
