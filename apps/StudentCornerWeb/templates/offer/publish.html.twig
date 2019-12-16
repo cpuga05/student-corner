@@ -1,0 +1,32 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block content %}
+<div class="card w-75 m-auto">
+    <div class="card-body">
+        <h4 class="card-title">Publish offer</h4>
+        {{ form_start(form) }}
+        <div class="form-group">
+            <label for="name">Title:</label>
+            {{ form_widget(form.name, {'attr': {'class': 'form-control', 'id': 'name'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="school">School:</label>
+            {{ form_widget(form.school, {'attr': {'class': 'form-control', 'id': 'school'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="course">Course:</label>
+            {{ form_widget(form.course, {'attr': {'class': 'form-control', 'id': 'course'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="teacher">Teacher:</label>
+            {{ form_widget(form.teacher, {'attr': {'class': 'form-control', 'id': 'teacher'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            {{ form_widget(form.price, {'attr': {'class': 'form-control', 'id': 'price'}}) }}
+        </div>
+        {{ form_row(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}

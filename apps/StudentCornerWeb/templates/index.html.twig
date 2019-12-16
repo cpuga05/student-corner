@@ -1,0 +1,15 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        {% for offer in offers %}
+            <div class="col-md-4">
+                <h2>{{ offer.name }}</h2>
+                <p>{{ offer.school }} &raquo; {{ offer.course }} &raquo; {{ offer.teacher }}</p>
+                <p><a class="btn btn-sm btn-success mr-0" href="#" role="button">Buy for {{ offer.price }} €</a></p>
+            </div>
+        {% else %}
+            Not offers found
+        {% endfor %}
+    </div>
+{% endblock %}

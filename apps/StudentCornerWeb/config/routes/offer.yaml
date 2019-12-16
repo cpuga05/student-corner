@@ -1,0 +1,6 @@
+publish:
+  path: /publish
+  controller: StudentCornerWeb\Controller\Offer\PublishController
+  methods: [GET,POST]
+  defaults:
+    auth: true
