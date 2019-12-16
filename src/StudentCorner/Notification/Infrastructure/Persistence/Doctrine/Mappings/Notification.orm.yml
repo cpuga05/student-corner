@@ -1,0 +1,26 @@
+StudentCorner\Notification\Domain\Notification:
+  type: entity
+  table: notifications
+  id:
+    id:
+      column: id
+      type: NotificationId
+  fields:
+    type:
+      column: type
+      type: NotificationType
+    destination:
+      column: destination
+      type: NotificationDestination
+    body:
+      column: body
+      type: NotificationBody
+    status:
+      column: status
+      type: NotificationStatus
+    userId:
+      column: user_id
+      type: UserId
+    publishedAt:
+      column: published_at
+      type: datetime_immutable
