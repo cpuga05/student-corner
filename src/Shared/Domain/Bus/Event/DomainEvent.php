@@ -10,11 +10,8 @@ use Shared\Domain\ValueObject\Uuid;
 
 abstract class DomainEvent
 {
-    /** @var string */
     private string $aggregateId;
-    /** @var string */
     private string $eventId;
-    /** @var string */
     private string $occurredOn;
 
     public function __construct(string $aggregateId, string $eventId = null, string $occurredOn = null)
@@ -28,7 +25,12 @@ abstract class DomainEvent
 
     abstract public function toPrimitives(): array;
 
-    abstract public static function fromPrimitives(string $aggregateId, array $body, string $eventId, string $occurredOn): self;
+    abstract public static function fromPrimitives(
+        string $aggregateId,
+        array $body,
+        string $eventId,
+        string $occurredOn
+    ): self;
 
     public function aggregateId(): string
     {

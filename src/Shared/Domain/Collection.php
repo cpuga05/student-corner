@@ -8,6 +8,7 @@ use ArrayIterator;
 use Countable;
 use IteratorAggregate;
 use Traversable;
+
 use function count;
 
 abstract class Collection implements Countable, IteratorAggregate

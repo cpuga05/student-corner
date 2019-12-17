@@ -17,7 +17,7 @@ final class OrderType extends Enum
     {
         return $this->equals(new self(self::NONE));
     }
-    
+
     protected function throwExceptionForInvalidValue($value): void
     {
         throw new InvalidArgumentException($value);

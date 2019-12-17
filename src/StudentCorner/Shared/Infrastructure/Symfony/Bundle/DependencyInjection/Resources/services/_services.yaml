@@ -34,5 +34,5 @@ services:
   Shared\Domain\Bus\Command\CommandBus: '@StudentCorner\Shared\Infrastructure\Domain\Bus\Command\SymfonySyncCommandBus'
   Shared\Domain\Bus\Query\QueryBus: '@StudentCorner\Shared\Infrastructure\Domain\Bus\Query\SymfonySyncQueryBus'
   Shared\Domain\Bus\Event\EventBus: '@StudentCorner\Shared\Infrastructure\Domain\Bus\Event\SymfonySyncEventBus'
-#  Shared\Domain\Bus\Event\DomainEventPublisher: '@StudentTracker\Infrastructure\Domain\Bus\Event\InMemoryDomainEventPublisher'
+  #  Shared\Domain\Bus\Event\DomainEventPublisher: '@StudentTracker\Infrastructure\Domain\Bus\Event\InMemoryDomainEventPublisher'
   StudentCorner\User\Domain\Authenticate: '@StudentCorner\User\Infrastructure\SessionAuthenticate'

@@ -6,6 +6,7 @@ namespace Shared\Domain\Criteria;
 
 use InvalidArgumentException;
 use Shared\Domain\ValueObject\Enum;
+
 use function in_array;
 
 final class FilterOperator extends Enum
@@ -16,7 +17,6 @@ final class FilterOperator extends Enum
     public const LT = '<';
     public const CONTAINS = 'CONTAINS';
     public const NOT_CONTAINS = 'NOT_CONTAINS';
-
     private static array $containing = [self::CONTAINS, self::NOT_CONTAINS];
 
     public function isContaining(): bool

@@ -6,7 +6,6 @@ namespace Shared\Domain\ValueObject;
 
 abstract class IntegerValueObject
 {
-    /** @var int */
     private int $value;
 
     public function __construct(int $value)

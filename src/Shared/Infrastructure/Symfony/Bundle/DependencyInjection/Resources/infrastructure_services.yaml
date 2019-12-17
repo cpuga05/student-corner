@@ -35,19 +35,19 @@ services:
         port: '%elastic_port%'
     tags:
       - { name: shared.logger }
-#
-#  Shared\Infrastructure\Queue\RabbitMq\RabbitMqConnection:
-#    arguments:
-#      - '%rabbitmq_connection_parameters%'
-#
-#  Shared\Infrastructure\Domain\Bus\Event\RabbitMqEventConsumer:
-#    arguments:
-#      - '@Shared\Infrastructure\Queue\RabbitMq\RabbitMqConnection'
-#      - '%env(RABBITMQ_EXCHANGE)%'
-#      - '%env(RABBITMQ_MAX_RETRIES)%'
-#
-#  Shared\Infrastructure\Domain\Bus\Event\DomainEventConsumerLocator:
-#    arguments: [!tagged event.consumer]
+    #
+    #  Shared\Infrastructure\Queue\RabbitMq\RabbitMqConnection:
+    #    arguments:
+    #      - '%rabbitmq_connection_parameters%'
+    #
+    #  Shared\Infrastructure\Domain\Bus\Event\RabbitMqEventConsumer:
+    #    arguments:
+    #      - '@Shared\Infrastructure\Queue\RabbitMq\RabbitMqConnection'
+    #      - '%env(RABBITMQ_EXCHANGE)%'
+    #      - '%env(RABBITMQ_MAX_RETRIES)%'
+    #
+    #  Shared\Infrastructure\Domain\Bus\Event\DomainEventConsumerLocator:
+    #    arguments: [!tagged event.consumer]
 
     #CodelyTv\Shared\Infrastructure\Bus\Event\DomainEventMapping:
     # arguments: [!tagged codely.mooc.subscriber]

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Shared\Domain;
 
 use InvalidArgumentException;
+
 use function get_class;
 use function sprintf;
 
@@ -20,7 +21,9 @@ final class Assert
     public static function instanceOf(string $class, $item): void
     {
         if (!$item instanceof $class) {
-            throw new InvalidArgumentException(sprintf('The object <%s> is not an instance of <%s>', get_class($item), $class));
+            throw new InvalidArgumentException(
+                sprintf('The object <%s> is not an instance of <%s>', get_class($item), $class)
+            );
         }
     }
 }

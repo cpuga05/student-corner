@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Shared\Domain\Criteria;
 
 use Shared\Domain\Collection;
+
 use function array_merge;
 use function array_reduce;
 use function sprintf;

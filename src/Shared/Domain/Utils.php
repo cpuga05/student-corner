@@ -6,8 +6,8 @@ namespace Shared\Domain;
 
 use DateTimeInterface;
 use RuntimeException;
+
 use function array_filter;
-use function array_merge;
 use function ctype_lower;
 use function in_array;
 use function is_array;
@@ -21,6 +21,7 @@ use function str_replace;
 use function strlen;
 use function strtolower;
 use function ucwords;
+
 use const JSON_ERROR_NONE;
 
 final class Utils

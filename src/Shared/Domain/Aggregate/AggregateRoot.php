@@ -8,7 +8,6 @@ use Shared\Domain\Bus\Event\DomainEvent;
 
 abstract class AggregateRoot
 {
-    /** @var array */
     private array $domainEvents = [];
 
     final protected function record(DomainEvent $domainEvent): void

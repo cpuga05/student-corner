@@ -8,13 +8,9 @@ use function sprintf;
 
 final class Criteria
 {
-    /** @var Filters */
     private Filters $filters;
-    /** @var Order */
     private Order $order;
-    /** @var int|null */
     private ?int $offset;
-    /** @var int|null */
     private ?int $limit;
 
     public function __construct(Filters $filters, Order $order, ?int $offset, ?int $limit)

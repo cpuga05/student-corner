@@ -6,7 +6,6 @@ namespace StudentCorner\Email\Application\Send;
 
 use Shared\Domain\Bus\Event\DomainEventSubscriber;
 use Shared\Domain\Bus\Query\QueryBus;
-use StudentCorner\Email\Domain\Email;
 use StudentCorner\Email\Domain\EmailBody;
 use StudentCorner\Email\Domain\EmailId;
 use StudentCorner\Email\Domain\EmailSubject;

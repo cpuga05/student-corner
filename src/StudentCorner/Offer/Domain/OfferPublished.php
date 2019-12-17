@@ -67,7 +67,7 @@ final class OfferPublished extends DomainEvent
             'teacher' => $this->teacher,
             'price' => $this->price,
             'user_id' => $this->userId,
-            'published_at' => $this->publishedAt
+            'published_at' => $this->publishedAt,
         ];
     }
 

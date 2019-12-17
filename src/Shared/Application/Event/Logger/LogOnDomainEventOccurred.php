@@ -15,7 +15,6 @@ use function substr;
 
 final class LogOnDomainEventOccurred implements DomainEventSubscriber
 {
-    /** @var Logger */
     private Logger $logger;
 
     public function __construct(Logger $logger)

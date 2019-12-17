@@ -10,7 +10,6 @@ use Shared\Domain\Bus\Event\StoredEvent;
 
 final class StoreOnDomainEventOccurred implements DomainEventSubscriber
 {
-    /** @var StoreEventService */
     private StoreEventService $service;
 
     public function __construct(StoreEventService $service)

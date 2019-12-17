@@ -9,7 +9,6 @@ use StudentCorner\User\Domain\UserEncryptedPassword;
 use StudentCorner\User\Domain\UserPassword;
 
 use function password_hash;
-
 use function password_verify;
 
 use const PASSWORD_BCRYPT;

@@ -8,11 +8,8 @@ use function sprintf;
 
 final class Filter
 {
-    /** @var FilterField */
     private FilterField $field;
-    /** @var FilterOperator */
     private FilterOperator $operator;
-    /** @var FilterValue */
     private FilterValue $value;
 
     public function __construct(FilterField $field, FilterOperator $operator, FilterValue $value)

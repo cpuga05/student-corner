@@ -7,8 +7,6 @@ namespace Shared\Infrastructure\Persistence\Doctrine\DBAL;
 use Shared\Domain\Utils;
 
 use function array_flip;
-use function array_merge;
-use function dump;
 use function explode;
 use function Lambdish\Phunctional\filter;
 use function Lambdish\Phunctional\map;
