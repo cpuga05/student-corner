@@ -18,11 +18,11 @@ final class Score extends AggregateRoot
         $this->point = $point;
     }
 
-    public static function create(UserId $userId): self
+    public static function initialize(UserId $userId): self
     {
         $score = new self($userId, ScorePoint::zero());
 
-        $score->record(ScoreCreated::create($score));
+        $score->record(ScoreInitialized::create($score));
 
         return $score;
     }

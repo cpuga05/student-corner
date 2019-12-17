@@ -22,7 +22,7 @@ final class ShowScoreService
         $score = $this->repository->findByUserId($userId);
 
         if (null === $score) {
-            $score = Score::create($userId);
+            $score = Score::initialize($userId);
         }
 
         return $score;

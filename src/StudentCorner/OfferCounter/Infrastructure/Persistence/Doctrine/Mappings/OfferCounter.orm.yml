@@ -1,0 +1,14 @@
+StudentCorner\OfferCounter\Domain\OfferCounter:
+  type: entity
+  table: offers_counter
+  id:
+    userId:
+      column: user_id
+      type: UserId
+  fields:
+    total:
+      column: total
+      type: OfferCounterTotal
+    existingOffers:
+      column: existeing_offers
+      type: OfferIds

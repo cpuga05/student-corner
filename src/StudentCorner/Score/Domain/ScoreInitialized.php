@@ -6,7 +6,7 @@ namespace StudentCorner\Score\Domain;
 
 use Shared\Domain\Bus\Event\DomainEvent;
 
-final class ScoreCreated extends DomainEvent
+final class ScoreInitialized extends DomainEvent
 {
     private int $point;
 
@@ -23,7 +23,7 @@ final class ScoreCreated extends DomainEvent
 
     public function eventName(): string
     {
-        return 'score.created';
+        return 'score.initialized';
     }
 
     public function toPrimitives(): array
