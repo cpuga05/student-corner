@@ -9,9 +9,7 @@ use StudentCorner\User\Domain\User;
 
 final class UserResponse implements Response
 {
-    /** @var string */
     private string $id;
-    /** @var string */
     private string $email;
 
     public function __construct(string $id, string $email)

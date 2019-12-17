@@ -9,9 +9,7 @@ use StudentCorner\User\Domain\UserId;
 
 final class Score extends AggregateRoot
 {
-    /** @var UserId */
     private UserId $userId;
-    /** @var ScorePoint */
     private ScorePoint $point;
 
     public function __construct(UserId $userId, ScorePoint $point)

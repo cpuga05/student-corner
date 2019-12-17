@@ -8,7 +8,6 @@ use Shared\Domain\Bus\Event\DomainEvent;
 
 final class ScoreCreated extends DomainEvent
 {
-    /** @var int */
     private int $point;
 
     public function __construct(string $aggregateId, int $point, string $eventId = null, string $occurredOn = null)

@@ -4,23 +4,18 @@ declare(strict_types=1);
 
 namespace StudentCorner\User\Domain;
 
-
 final class UserSecurityToken
 {
-    /** @var UserId */
     private UserId $id;
-    /** @var UserEmail */
     private UserEmail $email;
 
-    private function __construct(
-        UserId $id,
-        UserEmail $email
-    ) {
+    private function __construct(UserId $id, UserEmail $email)
+    {
         $this->id = $id;
         $this->email = $email;
     }
 
-    public static function fromUser(User $user)
+    public static function fromUser(User $user): self
     {
         return new self($user->id(), $user->email());
     }

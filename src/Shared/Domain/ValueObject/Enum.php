@@ -11,7 +11,6 @@ use function in_array;
 
 abstract class Enum
 {
-    /** @var array */
     protected static array $cache = [];
     private $value;
 

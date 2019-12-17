@@ -8,9 +8,7 @@ use Shared\Domain\Bus\Command\Command;
 
 final class SignInUserCommand implements Command
 {
-    /** @var string */
     private string $email;
-    /** @var string */
     private string $password;
 
     public function __construct(string $email, string $password)

@@ -11,7 +11,6 @@ use StudentCorner\User\Domain\UserRepository;
 
 final class ViewUserService
 {
-    /** @var UserRepository */
     private UserRepository $repository;
 
     public function __construct(UserRepository $repository)

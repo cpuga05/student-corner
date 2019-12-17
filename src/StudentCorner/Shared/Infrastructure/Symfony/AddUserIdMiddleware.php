@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace StudentCorner\Shared\Infrastructure\Symfony;
 
 use StudentCorner\User\Domain\Authenticate;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 final class AddUserIdMiddleware
 {
-    /** @var Authenticate */
     private Authenticate $authenticate;
 
     public function __construct(Authenticate $authenticate)

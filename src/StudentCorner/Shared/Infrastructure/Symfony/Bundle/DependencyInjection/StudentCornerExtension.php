@@ -11,10 +11,8 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 final class StudentCornerExtension extends Extension
 {
-    public function load(
-        array $config,
-        ContainerBuilder $container
-    ): void {
+    public function load(array $config, ContainerBuilder $container): void
+    {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/Resources'));
 
         $loader->load('extension.yaml');

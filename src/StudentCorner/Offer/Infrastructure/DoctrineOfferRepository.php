@@ -12,8 +12,6 @@ use StudentCorner\Offer\Domain\OfferId;
 use StudentCorner\Offer\Domain\OfferRepository;
 use StudentCorner\Offer\Domain\Offers;
 
-use function dump;
-
 final class DoctrineOfferRepository extends DoctrineRepository implements OfferRepository
 {
     protected function entity(): String

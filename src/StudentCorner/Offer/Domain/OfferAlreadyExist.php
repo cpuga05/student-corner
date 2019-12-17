@@ -10,7 +10,6 @@ use function sprintf;
 
 final class OfferAlreadyExist extends DomainError
 {
-    /** @var OfferId */
     private OfferId $id;
 
     public function __construct(OfferId $id)

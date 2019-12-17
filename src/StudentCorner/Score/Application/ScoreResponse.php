@@ -9,9 +9,7 @@ use StudentCorner\Score\Domain\Score;
 
 final class ScoreResponse implements Response
 {
-    /** @var string */
     private string $userId;
-    /** @var int */
     private int $point;
 
     public function __construct(string $userId, int $point)

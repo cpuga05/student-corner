@@ -10,7 +10,6 @@ use function sprintf;
 
 final class UserNotExist extends DomainError
 {
-    /** @var UserEmail */
     private UserEmail $email;
 
     public function __construct(UserEmail $email)

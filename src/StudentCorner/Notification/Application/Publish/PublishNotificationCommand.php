@@ -8,24 +8,14 @@ use Shared\Domain\Bus\Command\Command;
 
 final class PublishNotificationCommand implements Command
 {
-    /** @var string */
     private string $id;
-    /** @var string */
     private string $type;
-    /** @var string */
     private string $destination;
-    /** @var string */
     private string $body;
-    /** @var string */
     private string $userId;
 
-    public function __construct(
-        string $id,
-        string $type,
-        string $destination,
-        string $body,
-        string $userId
-    ) {
+    public function __construct(string $id, string $type, string $destination, string $body, string $userId)
+    {
         $this->id = $id;
         $this->type = $type;
         $this->destination = $destination;

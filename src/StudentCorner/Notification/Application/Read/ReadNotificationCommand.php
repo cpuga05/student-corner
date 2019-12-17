@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace StudentCorner\User\Application\View;
+namespace StudentCorner\Notification\Application\Read;
 
-use Shared\Domain\Bus\Query\Query;
+use Shared\Domain\Bus\Command\Command;
 
-final class ViewUserQuery implements Query
+final class ReadNotificationCommand implements Command
 {
     private string $id;
 

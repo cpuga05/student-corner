@@ -15,7 +15,6 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 final class SessionAuthenticate extends Authenticate
 {
-    /** @var SessionInterface */
     private SessionInterface $session;
 
     public function __construct(

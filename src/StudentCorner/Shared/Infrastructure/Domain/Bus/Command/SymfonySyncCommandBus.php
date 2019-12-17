@@ -16,7 +16,6 @@ use Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
 
 class SymfonySyncCommandBus implements CommandBus
 {
-    /** @var MessageBus */
     private MessageBus $bus;
 
     public function __construct(iterable $commandHandlers, DoctrineTransactionMiddleware $doctrineTransactionMiddleware)

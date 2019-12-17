@@ -6,6 +6,7 @@ namespace Shared\Domain\ValueObject;
 
 use InvalidArgumentException;
 use Ramsey\Uuid\Uuid as RamseyUuid;
+
 use function sprintf;
 
 class Uuid extends StringValueObject

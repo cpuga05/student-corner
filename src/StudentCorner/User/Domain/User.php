@@ -8,11 +8,8 @@ use Shared\Domain\Aggregate\AggregateRoot;
 
 final class User extends AggregateRoot
 {
-    /** @var UserId */
     private UserId $id;
-    /** @var UserEmail */
     private UserEmail $email;
-    /** @var UserEncryptedPassword */
     private UserEncryptedPassword $password;
 
     public function __construct(UserId $id, UserEmail $email, UserEncryptedPassword $password)

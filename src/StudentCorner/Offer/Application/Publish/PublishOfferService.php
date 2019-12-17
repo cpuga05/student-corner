@@ -20,18 +20,12 @@ use StudentCorner\User\Domain\UserId;
 
 final class PublishOfferService
 {
-    /** @var OfferRepository */
     private OfferRepository $repository;
-    /** @var QueryBus */
     private QueryBus $queryBus;
-    /** @var EventBus */
     private EventBus $eventBus;
 
-    public function __construct(
-        OfferRepository $repository,
-        QueryBus $queryBus,
-        EventBus $eventBus
-    ) {
+    public function __construct(OfferRepository $repository, QueryBus $queryBus, EventBus $eventBus)
+    {
         $this->repository = $repository;
         $this->queryBus = $queryBus;
         $this->eventBus = $eventBus;

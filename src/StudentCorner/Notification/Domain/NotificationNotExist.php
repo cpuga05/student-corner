@@ -8,7 +8,7 @@ use Shared\Domain\DomainError;
 
 use function sprintf;
 
-final class NotificationAlreadyExist extends DomainError
+final class NotificationNotExist extends DomainError
 {
     private NotificationId $id;
 
@@ -20,11 +20,11 @@ final class NotificationAlreadyExist extends DomainError
 
     public function errorCode(): string
     {
-        return 'notification.already_exist';
+        return 'notification.not_exist';
     }
 
     protected function errorMessage(): string
     {
-        return sprintf('The notification <%s> already exist', $this->id->value());
+        return sprintf('The notification <%s> not exist', $this->id->value());
     }
 }

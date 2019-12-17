@@ -13,7 +13,6 @@ use Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
 
 class SymfonySyncEventBus implements EventBus
 {
-    /** @var MessageBus */
     private MessageBus $bus;
 
     public function __construct(iterable $subscribers)

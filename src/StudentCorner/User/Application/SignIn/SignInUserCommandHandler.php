@@ -8,9 +8,8 @@ use Shared\Domain\Bus\Command\CommandHandler;
 use StudentCorner\User\Domain\UserEmail;
 use StudentCorner\User\Domain\UserPassword;
 
-final class SignInUserCommandHander implements CommandHandler
+final class SignInUserCommandHandler implements CommandHandler
 {
-    /** @var SignInUserService */
     private SignInUserService $service;
 
     public function __construct(SignInUserService $service)

@@ -15,11 +15,8 @@ use StudentCorner\User\Domain\UserRepository;
 
 final class SignUpUserService
 {
-    /** @var PasswordEncryption */
     private PasswordEncryption $passwordEncryption;
-    /** @var UserRepository */
     private UserRepository $repository;
-    /** @var EventBus */
     private EventBus $eventBus;
 
     public function __construct(PasswordEncryption $passwordEncryption, UserRepository $repository, EventBus $eventBus)

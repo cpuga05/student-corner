@@ -8,15 +8,10 @@ use Shared\Domain\Bus\Query\Query;
 
 final class ShowOffersQuery implements Query
 {
-    /** @var array */
     private array $filters;
-    /** @var string */
     private string $orderBy;
-    /** @var string */
     private string $order;
-    /** @var int */
     private int $limit;
-    /** @var int */
     private int $offset;
 
     public function __construct(

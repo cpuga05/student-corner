@@ -10,7 +10,6 @@ use function sprintf;
 
 final class UserAlreadyExist extends DomainError
 {
-    /** @var UserEmail */
     private UserEmail $email;
 
     public function __construct(UserEmail $email)

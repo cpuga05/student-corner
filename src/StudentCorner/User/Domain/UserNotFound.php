@@ -10,12 +10,12 @@ use function sprintf;
 
 final class UserNotFound extends DomainError
 {
-    /** @var UserId */
     private UserId $id;
 
     public function __construct(UserId $id)
     {
         $this->id = $id;
+        parent::__construct();
     }
 
     public function errorCode(): string

@@ -12,7 +12,6 @@ use StudentCorner\User\Domain\UserEmail;
 
 final class SendEmailCommandHandler implements CommandHandler
 {
-    /** @var SendEmailService */
     private SendEmailService $service;
 
     public function __construct(SendEmailService $service)

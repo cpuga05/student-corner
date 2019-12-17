@@ -8,7 +8,6 @@ use Shared\Domain\Bus\Event\DomainEvent;
 
 final class UserSignedInDomainEvent extends DomainEvent
 {
-    /** @var string */
     private string $email;
 
     public function __construct(string $aggregateId, string $email, string $eventId = null, string $occurredOn = null)

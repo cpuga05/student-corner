@@ -12,9 +12,7 @@ use StudentCorner\User\Domain\UserId;
 
 final class IncreaseScoreService
 {
-    /** @var ScoreRepository */
     private ScoreRepository $repository;
-    /** @var EventBus */
     private EventBus $eventBus;
 
     public function __construct(ScoreRepository $repository, EventBus $eventBus)

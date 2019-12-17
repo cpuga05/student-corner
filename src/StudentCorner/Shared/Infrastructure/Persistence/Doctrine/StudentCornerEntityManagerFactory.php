@@ -9,8 +9,6 @@ use Shared\Infrastructure\Persistence\Doctrine\DBAL\DBALTypesSearcher;
 use Shared\Infrastructure\Persistence\Doctrine\DoctrineEntityManagerFactory;
 use Shared\Infrastructure\Persistence\Doctrine\DoctrinePrefixesSearcher;
 
-use function dump;
-
 final class StudentCornerEntityManagerFactory
 {
     public static function create(array $parameters, string $environment): EntityManagerInterface

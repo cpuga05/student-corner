@@ -10,7 +10,6 @@ use StudentCorner\Offer\Domain\Offers;
 
 final class ShowOffersService
 {
-    /** @var OfferRepository */
     private OfferRepository $repository;
 
     public function __construct(OfferRepository $repository)

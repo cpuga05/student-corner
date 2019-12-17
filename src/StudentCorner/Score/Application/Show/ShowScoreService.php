@@ -10,7 +10,6 @@ use StudentCorner\User\Domain\UserId;
 
 final class ShowScoreService
 {
-    /** @var ScoreRepository */
     private ScoreRepository $repository;
 
     public function __construct(ScoreRepository $repository)

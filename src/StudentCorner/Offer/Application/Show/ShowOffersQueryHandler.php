@@ -10,11 +10,8 @@ use Shared\Domain\Criteria\Filters;
 use Shared\Domain\Criteria\Order;
 use StudentCorner\Offer\Application\OffersResponse;
 
-use function dump;
-
 final class ShowOffersQueryHandler implements QueryHandler
 {
-    /** @var ShowOffersService */
     private ShowOffersService $service;
 
     public function __construct(ShowOffersService $service)

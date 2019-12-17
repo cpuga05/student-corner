@@ -10,7 +10,6 @@ use StudentCorner\User\Domain\UserId;
 
 final class ShowScoreQueryHandler implements QueryHandler
 {
-    /** @var ShowScoreService */
     private ShowScoreService $service;
 
     public function __construct(ShowScoreService $service)

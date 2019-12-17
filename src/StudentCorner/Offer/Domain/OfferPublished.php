@@ -9,19 +9,12 @@ use Shared\Domain\Utils;
 
 final class OfferPublished extends DomainEvent
 {
-    /** @var string */
     private string $name;
-    /** @var string */
     private string $school;
-    /** @var string */
     private string $course;
-    /** @var string */
     private string $teacher;
-    /** @var int */
     private int $price;
-    /** @var string */
     private string $userId;
-    /** @var string */
     private string $publishedAt;
 
     public function __construct(

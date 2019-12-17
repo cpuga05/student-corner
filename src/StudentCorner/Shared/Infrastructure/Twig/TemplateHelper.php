@@ -10,7 +10,6 @@ use Twig\TwigFunction;
 
 final class TemplateHelper extends AbstractExtension
 {
-    /** @var Authenticate */
     private Authenticate $authenticate;
 
     public function __construct(Authenticate $authenticate)

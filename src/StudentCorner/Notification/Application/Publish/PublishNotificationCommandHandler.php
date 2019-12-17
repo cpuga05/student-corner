@@ -13,7 +13,6 @@ use StudentCorner\User\Domain\UserId;
 
 final class PublishNotificationCommandHandler implements CommandHandler
 {
-    /** @var PublishNotificationService */
     private PublishNotificationService $service;
 
     public function __construct(PublishNotificationService $service)

@@ -10,21 +10,13 @@ use StudentCorner\Offer\Domain\Offer;
 
 final class OfferResponse implements Response
 {
-    /** @var string */
     private string $id;
-    /** @var string */
     private string $name;
-    /** @var string */
     private string $school;
-    /** @var string */
     private string $course;
-    /** @var string */
     private string $teacher;
-    /** @var int */
     private int $price;
-    /** @var string */
     private string $userId;
-    /** @var DateTimeImmutable */
     private DateTimeImmutable $publishedAt;
 
     public function __construct(

@@ -9,17 +9,11 @@ use Shared\Domain\Utils;
 
 final class NotificationPublished extends DomainEvent
 {
-    /** @var string */
     private string $type;
-    /** @var string */
     private string $destination;
-    /** @var string */
     private string $body;
-    /** @var string */
     private string $status;
-    /** @var string */
     private string $userId;
-    /** @var string */
     private string $publishedAt;
 
     public function __construct(

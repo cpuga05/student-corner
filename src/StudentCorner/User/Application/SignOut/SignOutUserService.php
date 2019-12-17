@@ -8,7 +8,6 @@ use StudentCorner\User\Domain\Authenticate;
 
 final class SignOutUserService
 {
-    /** @var Authenticate */
     private Authenticate $authenticate;
 
     public function __construct(Authenticate $authenticate)

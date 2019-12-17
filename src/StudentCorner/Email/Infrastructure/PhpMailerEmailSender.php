@@ -12,7 +12,6 @@ use StudentCorner\Email\Domain\EmailSender;
 
 final class PhpMailerEmailSender implements EmailSender
 {
-    /** @var PHPMailer */
     private PHPMailer $client;
 
     public function __construct(PHPMailer $client)

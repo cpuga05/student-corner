@@ -10,7 +10,6 @@ use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 final class SessionAuthMiddleware
 {
-    /** @var Authenticate */
     private Authenticate $authenticate;
 
     public function __construct(Authenticate $authenticate)

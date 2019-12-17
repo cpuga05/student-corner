@@ -11,7 +11,6 @@ use StudentCorner\User\Domain\UserId;
 
 final class IncreaseScoreOnOfferPublished implements DomainEventSubscriber
 {
-    /** @var IncreaseScoreService */
     private IncreaseScoreService $service;
 
     public function __construct(IncreaseScoreService $service)

@@ -12,7 +12,6 @@ use function count;
 
 abstract class Collection implements Countable, IteratorAggregate
 {
-    /** @var array */
     private array $items;
 
     public function __construct(array $items)

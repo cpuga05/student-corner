@@ -17,7 +17,6 @@ use Symfony\Component\Messenger\Stamp\HandledStamp;
 
 class SymfonySyncQueryBus implements QueryBus
 {
-    /** @var MessageBus */
     private MessageBus $bus;
 
     public function __construct(iterable $queryHandlers)

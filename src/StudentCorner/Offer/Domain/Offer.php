@@ -10,21 +10,13 @@ use StudentCorner\User\Domain\UserId;
 
 final class Offer extends AggregateRoot
 {
-    /** @var OfferId */
     private OfferId $id;
-    /** @var OfferName */
     private OfferName $name;
-    /** @var OfferSchool */
     private OfferSchool $school;
-    /** @var OfferCourse */
     private OfferCourse $course;
-    /** @var OfferTeacher */
     private OfferTeacher $teacher;
-    /** @var OfferPrice */
     private OfferPrice $price;
-    /** @var UserId */
     private UserId $userId;
-    /** @var DateTimeImmutable */
     private DateTimeImmutable $publishedAt;
 
     public function __construct(

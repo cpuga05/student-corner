@@ -8,11 +8,8 @@ use Shared\Domain\Bus\Command\Command;
 
 final class SignUpUserCommand implements Command
 {
-    /** @var string */
     private string $id;
-    /** @var string */
     private string $email;
-    /** @var string */
     private string $password;
 
     public function __construct(string $id, string $email, string $password)

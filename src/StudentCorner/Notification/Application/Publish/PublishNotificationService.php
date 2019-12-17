@@ -18,11 +18,8 @@ use StudentCorner\User\Domain\UserId;
 
 final class PublishNotificationService
 {
-    /** @var NotificationRepository */
     private NotificationRepository $repository;
-    /** @var QueryBus */
     private QueryBus $queryBus;
-    /** @var EventBus */
     private EventBus $eventBus;
 
     public function __construct(NotificationRepository $repository, QueryBus $queryBus, EventBus $eventBus)

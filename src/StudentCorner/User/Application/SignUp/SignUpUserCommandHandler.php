@@ -11,7 +11,6 @@ use StudentCorner\User\Domain\UserPassword;
 
 final class SignUpUserCommandHandler implements CommandHandler
 {
-    /** @var SignUpUserService */
     private SignUpUserService $service;
 
     public function __construct(SignUpUserService $service)

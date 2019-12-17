@@ -8,7 +8,6 @@ use Shared\Domain\Bus\Command\CommandHandler;
 
 final class SignOutUserCommandHandler implements CommandHandler
 {
-    /** @var SignOutUserService */
     private SignOutUserService $service;
 
     public function __construct(SignOutUserService $service)
