@@ -1,0 +1,6 @@
+notifications:
+  path: /notifications
+  controller: StudentCornerWeb\Controller\Notification\ListController
+  methods: [GET]
+  defaults:
+    auth: true

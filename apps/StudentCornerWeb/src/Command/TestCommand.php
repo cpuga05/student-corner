@@ -46,7 +46,7 @@ final class TestCommand extends Command
             Uuid::random()->value(),
             'offer',
             '2692bea4-c23e-4bf3-967e-70d328527efb',
-            'New offer published',
+            'New offer published 2',
             $userId
         );
 

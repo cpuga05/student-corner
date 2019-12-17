@@ -6,6 +6,7 @@ namespace Shared\Infrastructure\Persistence\Doctrine\DBAL;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\StringType;
+use Shared\Domain\ValueObject\Uuid;
 
 abstract class UuidType extends StringType implements DoctrineCustomType
 {
@@ -27,7 +28,11 @@ abstract class UuidType extends StringType implements DoctrineCustomType
         $value,
         AbstractPlatform $platform
     ) {
-        return $value->value();
+        if ($value instanceof Uuid) {
+            return $value->value();
+        }
+
+        return $value;
     }
 
     abstract protected function typeClassName(): string;

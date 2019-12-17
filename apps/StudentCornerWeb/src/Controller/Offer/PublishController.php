@@ -47,7 +47,7 @@ final class PublishController extends Controller
         }
 
         return $this->render(
-            'offer/publish.html.twig',
+            'offers/publish.html.twig',
             [
                 'form' => $form->createView(),
             ]

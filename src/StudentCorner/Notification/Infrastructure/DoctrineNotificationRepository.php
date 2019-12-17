@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace StudentCorner\Notification\Infrastructure;
 
+use Shared\Domain\Criteria\Criteria;
+use Shared\Infrastructure\Persistence\Doctrine\DoctrineCriteriaConverter;
 use Shared\Infrastructure\Persistence\Doctrine\DoctrineRepository;
 use StudentCorner\Notification\Domain\Notification;
 use StudentCorner\Notification\Domain\NotificationId;
@@ -33,5 +35,20 @@ final class DoctrineNotificationRepository extends DoctrineRepository implements
         $notifications = $this->repository()->findBy(['userId' => $userId], ['publishedAt' => 'desc']);
 
         return new Notifications($notifications);
+    }
+
+    public function matching(Criteria $criteria): Notifications
+    {
+        $doctrineCriteria = DoctrineCriteriaConverter::convert($criteria);
+        $notifications = $this->repository()->matching($doctrineCriteria)->toArray();
+
+        return new Notifications($notifications);
+    }
+
+    public function matchingCounter(Criteria $criteria): int
+    {
+        $doctrineCriteria = DoctrineCriteriaConverter::convertToCount($criteria);
+
+        return $this->repository()->matching($doctrineCriteria)->count();
     }
 }

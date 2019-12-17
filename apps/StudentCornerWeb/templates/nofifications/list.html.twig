@@ -1,0 +1,11 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block content %}
+    <div class="list-group">
+        {% for notification in notifications %}
+            {% set class_read = ('unread' == notification.status) ? '-primary' : '' %}
+
+            <a href="#" class="list-group-item list-group-item-action list-group-item{{ class_read }}">{{ notification.body }}</a>
+        {% endfor %}
+    </div>
+{% endblock %}
