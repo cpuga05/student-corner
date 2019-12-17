@@ -9,11 +9,11 @@ use function sprintf;
 final class Filter
 {
     /** @var FilterField */
-    private $field;
+    private FilterField $field;
     /** @var FilterOperator */
-    private $operator;
+    private FilterOperator $operator;
     /** @var FilterValue */
-    private $value;
+    private FilterValue $value;
 
     public function __construct(FilterField $field, FilterOperator $operator, FilterValue $value)
     {

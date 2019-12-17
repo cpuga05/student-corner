@@ -11,8 +11,7 @@ use Shared\Domain\Aggregate\AggregateRoot;
 
 abstract class DoctrineRepository
 {
-    /** @var EntityManager */
-    private $entityManager;
+    private EntityManager $entityManager;
 
     public function __construct(EntityManager $entityManager)
     {
@@ -29,13 +28,13 @@ abstract class DoctrineRepository
     protected function persist(AggregateRoot $entity): void
     {
         $this->entityManager()->persist($entity);
-        $this->entityManager()->flush($entity);
+//        $this->entityManager()->flush($entity);
     }
 
     protected function remove(AggregateRoot $entity): void
     {
         $this->entityManager()->remove($entity);
-        $this->entityManager()->flush($entity);
+//        $this->entityManager()->flush($entity);
     }
 
     protected function repository(?string $entityClass = null): EntityRepository

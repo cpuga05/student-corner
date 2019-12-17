@@ -11,7 +11,7 @@ use StudentCorner\User\Domain\UserId;
 final class ViewUserQueryHandler implements QueryHandler
 {
     /** @var ViewUserService */
-    private $service;
+    private ViewUserService $service;
 
     public function __construct(ViewUserService $service)
     {

@@ -12,7 +12,7 @@ use function sprintf;
 final class NotificationAlreadyExist extends DomainError
 {
     /** @var NotificationId */
-    private $id;
+    private NotificationId $id;
 
     public function __construct(NotificationId $id)
     {

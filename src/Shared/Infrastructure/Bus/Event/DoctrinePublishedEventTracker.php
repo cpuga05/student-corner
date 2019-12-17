@@ -12,7 +12,7 @@ use Shared\Domain\Bus\Event\StoredEvent;
 final class DoctrinePublishedEventTracker implements PublishedEventTracker
 {
     /** @var EntityManager */
-    private $entityManager;
+    private EntityManager $entityManager;
 
     public function __construct(EntityManager $entityManager)
     {

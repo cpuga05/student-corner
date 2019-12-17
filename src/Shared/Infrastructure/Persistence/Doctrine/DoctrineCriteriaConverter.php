@@ -18,11 +18,11 @@ use function array_map;
 final class DoctrineCriteriaConverter
 {
     /** @var Criteria */
-    private $criteria;
+    private Criteria $criteria;
     /** @var array */
-    private $criteriaToDoctrineFields;
+    private array $criteriaToDoctrineFields;
     /** @var array */
-    private $hydrators;
+    private array $hydrators;
 
     public function __construct(Criteria $criteria, array $criteriaToDoctrineFields = [], array $hydrators = [])
     {

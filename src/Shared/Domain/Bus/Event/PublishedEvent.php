@@ -7,9 +7,9 @@ namespace Shared\Domain\Bus\Event;
 final class PublishedEvent
 {
     /** @var string */
-    private $channel;
+    private string $channel;
     /** @var int */
-    private $lastEventPublishedId;
+    private int $lastEventPublishedId;
 
     public function __construct(string $channel, int $lastEventPublishedId)
     {

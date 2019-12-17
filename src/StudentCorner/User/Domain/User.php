@@ -9,11 +9,11 @@ use Shared\Domain\Aggregate\AggregateRoot;
 final class User extends AggregateRoot
 {
     /** @var UserId */
-    private $id;
+    private UserId $id;
     /** @var UserEmail */
-    private $email;
+    private UserEmail $email;
     /** @var UserEncryptedPassword */
-    private $password;
+    private UserEncryptedPassword $password;
 
     public function __construct(UserId $id, UserEmail $email, UserEncryptedPassword $password)
     {

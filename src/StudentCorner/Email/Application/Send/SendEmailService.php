@@ -15,9 +15,9 @@ use StudentCorner\User\Domain\UserEmail;
 final class SendEmailService
 {
     /** @var EmailSender */
-    private $sender;
+    private EmailSender $sender;
     /** @var EventBus */
-    private $eventBus;
+    private EventBus $eventBus;
 
     public function __construct(EmailSender $sender, EventBus $eventBus)
     {

@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
 final class FormatJsonResponseListener
 {
     /** @var KernelInterface */
-    private $kernel;
+    private KernelInterface $kernel;
 
     public function __construct(KernelInterface $kernel)
     {

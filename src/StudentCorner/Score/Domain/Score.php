@@ -10,9 +10,9 @@ use StudentCorner\User\Domain\UserId;
 final class Score extends AggregateRoot
 {
     /** @var UserId */
-    private $userId;
+    private UserId $userId;
     /** @var ScorePoint */
-    private $point;
+    private ScorePoint $point;
 
     public function __construct(UserId $userId, ScorePoint $point)
     {

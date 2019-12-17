@@ -16,7 +16,7 @@ use function in_array;
 
 class ReorderHandlersLocator implements HandlersLocatorInterface
 {
-    private $handlers;
+    private array $handlers;
 
     public function __construct(array $handlers)
     {

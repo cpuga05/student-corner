@@ -8,9 +8,9 @@ namespace StudentCorner\User\Domain;
 final class UserSecurityToken
 {
     /** @var UserId */
-    private $id;
+    private UserId $id;
     /** @var UserEmail */
-    private $email;
+    private UserEmail $email;
 
     private function __construct(
         UserId $id,

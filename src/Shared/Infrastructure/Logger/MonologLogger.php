@@ -6,12 +6,9 @@ namespace Shared\Infrastructure\Logger;
 
 use Shared\Domain\Logger;
 
-use function dump;
-
 final class MonologLogger implements Logger
 {
-    /** @var \Monolog\Logger */
-    private $logger;
+    private \Monolog\Logger $logger;
 
     public function __construct(\Monolog\Logger $logger)
     {

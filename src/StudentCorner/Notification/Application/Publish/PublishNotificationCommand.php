@@ -9,15 +9,15 @@ use Shared\Domain\Bus\Command\Command;
 final class PublishNotificationCommand implements Command
 {
     /** @var string */
-    private $id;
+    private string $id;
     /** @var string */
-    private $type;
+    private string $type;
     /** @var string */
-    private $destination;
+    private string $destination;
     /** @var string */
-    private $body;
+    private string $body;
     /** @var string */
-    private $userId;
+    private string $userId;
 
     public function __construct(
         string $id,

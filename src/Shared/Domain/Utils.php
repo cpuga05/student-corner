@@ -73,7 +73,7 @@ final class Utils
 
         foreach ($items as $key => $item) {
             if (is_array($item) && !empty($item)) {
-                $results = array_merge($results, static::dot($item, $prepend . $key . '.'));
+                $results = [...$results, ...static::dot($item, $prepend . $key . '.')];
             } else {
                 $results[$prepend . $key] = $item;
             }
@@ -86,9 +86,7 @@ final class Utils
     {
         return array_filter(
             scandir($path),
-            static function (string $folder) {
-                return !in_array($folder, ['.', '..']);
-            }
+            fn(string $folder) => !in_array($folder, ['.', '..'])
         );
     }
 
@@ -96,9 +94,7 @@ final class Utils
     {
         return array_filter(
             scandir($path),
-            static function (string $file) use ($fileType) {
-                return strstr($file, $fileType);
-            }
+            fn(string $file) => strstr($file, $fileType)
         );
     }
 }

@@ -9,11 +9,11 @@ use Shared\Domain\Bus\Event\EventBus;
 abstract class Authenticate
 {
     /** @var PasswordEncryption */
-    private $passwordEncryption;
+    private PasswordEncryption $passwordEncryption;
     /** @var UserRepository */
-    private $userRepository;
+    private UserRepository $userRepository;
     /** @var EventBus */
-    private $eventBus;
+    private EventBus $eventBus;
 
     public function __construct(
         PasswordEncryption $passwordEncryption,

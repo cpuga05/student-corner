@@ -21,11 +21,11 @@ use StudentCorner\User\Domain\UserId;
 final class PublishOfferService
 {
     /** @var OfferRepository */
-    private $repository;
+    private OfferRepository $repository;
     /** @var QueryBus */
-    private $queryBus;
+    private QueryBus $queryBus;
     /** @var EventBus */
-    private $eventBus;
+    private EventBus $eventBus;
 
     public function __construct(
         OfferRepository $repository,

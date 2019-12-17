@@ -11,7 +11,7 @@ use function sprintf;
 final class UserAlreadyExist extends DomainError
 {
     /** @var UserEmail */
-    private $email;
+    private UserEmail $email;
 
     public function __construct(UserEmail $email)
     {

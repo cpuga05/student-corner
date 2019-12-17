@@ -9,15 +9,15 @@ use Shared\Domain\Bus\Query\Query;
 final class ShowOffersQuery implements Query
 {
     /** @var array */
-    private $filters;
+    private array $filters;
     /** @var string */
-    private $orderBy;
+    private string $orderBy;
     /** @var string */
-    private $order;
+    private string $order;
     /** @var int */
-    private $limit;
+    private int $limit;
     /** @var int */
-    private $offset;
+    private int $offset;
 
     public function __construct(
         array $filters,

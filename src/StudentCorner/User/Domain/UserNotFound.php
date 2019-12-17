@@ -11,7 +11,7 @@ use function sprintf;
 final class UserNotFound extends DomainError
 {
     /** @var UserId */
-    private $id;
+    private UserId $id;
 
     public function __construct(UserId $id)
     {

@@ -9,13 +9,13 @@ use function sprintf;
 final class Criteria
 {
     /** @var Filters */
-    private $filters;
+    private Filters $filters;
     /** @var Order */
-    private $order;
+    private Order $order;
     /** @var int|null */
-    private $offset;
+    private ?int $offset;
     /** @var int|null */
-    private $limit;
+    private ?int $limit;
 
     public function __construct(Filters $filters, Order $order, ?int $offset, ?int $limit)
     {

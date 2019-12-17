@@ -38,15 +38,11 @@ final class DoctrinePrefixesSearcher
 
     private static function isExistingMappingPath(): callable
     {
-        return static function (string $path): bool {
-            return !empty($path);
-        };
+        return fn(string $path): bool => !empty($path);
     }
 
     private static function namespaceFormatter(string $baseNamespace): callable
     {
-        return static function (string $path, string $module) use ($baseNamespace): string {
-            return "$baseNamespace\\$module\Domain";
-        };
+        return fn(string $path, string $module): string => "$baseNamespace\\$module\Domain";
     }
 }

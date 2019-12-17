@@ -9,9 +9,9 @@ use function sprintf;
 final class Order
 {
     /** @var OrderBy */
-    private $by;
+    private OrderBy $by;
     /** @var OrderType */
-    private $type;
+    private OrderType $type;
 
     public function __construct(OrderBy $by, OrderType $type)
     {

@@ -15,7 +15,7 @@ use function dump;
 final class ShowOffersQueryHandler implements QueryHandler
 {
     /** @var ShowOffersService */
-    private $service;
+    private ShowOffersService $service;
 
     public function __construct(ShowOffersService $service)
     {

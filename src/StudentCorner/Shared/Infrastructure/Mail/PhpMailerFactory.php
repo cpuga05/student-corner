@@ -13,7 +13,7 @@ final class PhpMailerFactory
         $client = new PHPMailer(true);
         $client->isSMTP();
         $client->Host = 'localhost';
-        $client->Port = 1025;
+        $client->Port = 1_025;
         $client->setFrom('no-reply@student-corner.com', 'Student Corner Notification');
 
         return $client;

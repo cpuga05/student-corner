@@ -43,9 +43,7 @@ final class DBALTypesSearcher
 
     private static function isExistingDbalPath(): callable
     {
-        return static function (string $path): bool {
-            return !empty($path);
-        };
+        return fn(string $path): bool => !empty($path);
     }
 
     private static function dbalClassesSearcher(string $contextName): callable
@@ -53,9 +51,7 @@ final class DBALTypesSearcher
         return static function (array $totalNamespaces, string $path) use ($contextName) {
             $possibleFiles = scandir($path);
             $files = filter(
-                static function ($file) {
-                    return Utils::endsWith('Type.php', $file);
-                },
+                fn($file) => Utils::endsWith('Type.php', $file),
                 $possibleFiles
             );
 
@@ -71,7 +67,7 @@ final class DBALTypesSearcher
                 $files
             );
 
-            return array_merge($totalNamespaces, $namespaces);
+            return [...$totalNamespaces, ...$namespaces];
         };
     }
 }

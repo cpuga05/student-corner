@@ -10,7 +10,6 @@ use Shared\Domain\Bus\Command\CommandBus;
 use Shared\Domain\Bus\Query\QueryBus;
 use Shared\Domain\ValueObject\Uuid;
 use StudentCorner\Notification\Application\Publish\PublishNotificationCommand;
-use StudentCorner\Offer\Application\Publish\PublishOfferCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -18,12 +17,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 final class TestCommand extends Command
 {
     protected static $defaultName = 'test';
-    /** @var Generator */
-    private $faker;
-    /** @var CommandBus */
-    private $commandBus;
-    /** @var QueryBus */
-    private $queryBus;
+    private Generator $faker;
+    private CommandBus $commandBus;
+    private QueryBus $queryBus;
 
     public function __construct(CommandBus $commandBus, QueryBus $queryBus)
     {

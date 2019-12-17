@@ -12,7 +12,7 @@ use function in_array;
 abstract class Enum
 {
     /** @var array */
-    protected static $cache = [];
+    protected static array $cache = [];
     private $value;
 
     public function __construct($value)

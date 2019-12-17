@@ -11,11 +11,11 @@ use Shared\Domain\ValueObject\Uuid;
 abstract class DomainEvent
 {
     /** @var string */
-    private $aggregateId;
+    private string $aggregateId;
     /** @var string */
-    private $eventId;
+    private string $eventId;
     /** @var string */
-    private $occurredOn;
+    private string $occurredOn;
 
     public function __construct(string $aggregateId, string $eventId = null, string $occurredOn = null)
     {

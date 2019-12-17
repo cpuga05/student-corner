@@ -9,7 +9,7 @@ use Shared\Domain\Bus\Query\Query;
 final class ShowScoreQuery implements Query
 {
     /** @var string */
-    private $userId;
+    private string $userId;
 
     public function __construct(string $userId)
     {

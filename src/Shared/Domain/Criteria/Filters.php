@@ -41,9 +41,7 @@ final class Filters extends Collection
     {
         return array_reduce(
             $this->items(),
-            static function (string $accumulate, Filter $filter) {
-                return sprintf('%s^%s', $accumulate, $filter->serialize());
-            },
+            fn(string $accumulate, Filter $filter) => sprintf('%s^%s', $accumulate, $filter->serialize()),
             ''
         );
     }

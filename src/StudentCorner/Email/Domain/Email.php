@@ -9,13 +9,13 @@ use StudentCorner\User\Domain\UserEmail;
 final class Email
 {
     /** @var EmailId */
-    private $id;
+    private EmailId $id;
     /** @var UserEmail */
-    private $email;
+    private UserEmail $email;
     /** @var EmailSubject */
-    private $subject;
+    private EmailSubject $subject;
     /** @var EmailBody */
-    private $body;
+    private EmailBody $body;
 
     public function __construct(EmailId $id, UserEmail $email, EmailSubject $subject, EmailBody $body)
     {

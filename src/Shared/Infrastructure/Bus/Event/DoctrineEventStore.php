@@ -16,7 +16,7 @@ use Shared\Infrastructure\Persistence\Doctrine\DoctrineCriteriaConverter;
 final class DoctrineEventStore implements EventStore
 {
     /** @var EntityManager */
-    private $entityManager;
+    private EntityManager $entityManager;
 
     public function __construct(EntityManager $entityManager)
     {

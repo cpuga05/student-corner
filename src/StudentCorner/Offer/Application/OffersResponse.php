@@ -10,7 +10,7 @@ use StudentCorner\Offer\Domain\Offers;
 final class OffersResponse implements Response
 {
     /** @var OfferResponse[] */
-    private $offers;
+    private array $offers;
 
     public function __construct(OfferResponse ...$offers)
     {

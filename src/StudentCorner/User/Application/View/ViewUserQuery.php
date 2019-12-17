@@ -9,7 +9,7 @@ use Shared\Domain\Bus\Query\Query;
 final class ViewUserQuery implements Query
 {
     /** @var string */
-    private $id;
+    private string $id;
 
     public function __construct(string $id)
     {

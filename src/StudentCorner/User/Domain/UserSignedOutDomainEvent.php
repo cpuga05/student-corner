@@ -9,7 +9,7 @@ use Shared\Domain\Bus\Event\DomainEvent;
 final class UserSignedOutDomainEvent extends DomainEvent
 {
     /** @var string */
-    private $email;
+    private string $email;
 
     public function __construct(string $id, string $email, string $eventId = null, string $occurredOn = null)
     {

@@ -16,7 +16,7 @@ use StudentCorner\User\Domain\UserId;
 final class PublishOfferCommandHandler implements CommandHandler
 {
     /** @var PublishOfferService */
-    private $service;
+    private PublishOfferService $service;
 
     public function __construct(PublishOfferService $service)
     {

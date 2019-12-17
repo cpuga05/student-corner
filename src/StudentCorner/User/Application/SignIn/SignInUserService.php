@@ -11,7 +11,7 @@ use StudentCorner\User\Domain\UserPassword;
 final class SignInUserService
 {
     /** @var Authenticate */
-    private $authenticate;
+    private Authenticate $authenticate;
 
     public function __construct(Authenticate $authenticate)
     {

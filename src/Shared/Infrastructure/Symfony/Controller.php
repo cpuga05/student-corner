@@ -16,11 +16,11 @@ use Symfony\Component\Form\FormInterface;
 abstract class Controller extends AbstractController
 {
     /** @var CommandBus */
-    private $commandBus;
+    private CommandBus $commandBus;
     /** @var QueryBus */
-    private $queryBus;
+    private QueryBus $queryBus;
     /** @var FormFactoryInterface */
-    protected $formFactory;
+    protected FormFactoryInterface $formFactory;
 
     public function __construct(
         CommandBus $commandBus,

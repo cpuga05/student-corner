@@ -28,10 +28,7 @@ final class DoctrineEntityManagerFactory
         bool $isDevMode,
         array $dbalCustomTypesClasses
     ): EntityManagerInterface {
-        $dbalCustomTypesClasses = array_merge(
-            DBALTypesSearcher::inPath(__DIR__ . '/../../../../../src', 'Shared'),
-            $dbalCustomTypesClasses
-        );
+        $dbalCustomTypesClasses = [...DBALTypesSearcher::inPath(__DIR__ . '/../../../../../src', 'Shared'), ...$dbalCustomTypesClasses];
 
         DBALTypesRegister::register($dbalCustomTypesClasses);
 

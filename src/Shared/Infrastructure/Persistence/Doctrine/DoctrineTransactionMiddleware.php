@@ -15,7 +15,7 @@ use Throwable;
 final class DoctrineTransactionMiddleware implements MiddlewareInterface
 {
     /** @var EntityManagerInterface */
-    private $entityManager;
+    private EntityManager $entityManager;
 
     public function __construct(EntityManager $entityManager)
     {

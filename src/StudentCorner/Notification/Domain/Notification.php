@@ -11,19 +11,19 @@ use StudentCorner\User\Domain\UserId;
 final class Notification extends AggregateRoot
 {
     /** @var NotificationId */
-    private $id;
+    private NotificationId $id;
     /** @var NotificationType */
-    private $type;
+    private NotificationType $type;
     /** @var NotificationDestination */
-    private $destination;
+    private NotificationDestination $destination;
     /** @var NotificationBody */
-    private $body;
+    private NotificationBody $body;
     /** @var NotificationStatus */
-    private $status;
+    private NotificationStatus $status;
     /** @var UserId */
-    private $userId;
+    private UserId $userId;
     /** @var DateTimeImmutable */
-    private $publishedAt;
+    private DateTimeImmutable $publishedAt;
 
     public function __construct(
         NotificationId $id,

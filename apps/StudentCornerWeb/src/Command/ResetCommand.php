@@ -19,10 +19,8 @@ use function Lambdish\Phunctional\reduce;
 final class ResetCommand extends Command
 {
     protected static $defaultName = 'reset';
-    /** @var EntityManager */
-    private $entityManager;
-    /** @var CommandBus */
-    private $commandBus;
+    private EntityManager $entityManager;
+    private CommandBus $commandBus;
 
     public function __construct(EntityManager $entityManager, CommandBus $commandBus)
     {

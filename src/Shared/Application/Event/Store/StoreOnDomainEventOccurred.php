@@ -11,7 +11,7 @@ use Shared\Domain\Bus\Event\StoredEvent;
 final class StoreOnDomainEventOccurred implements DomainEventSubscriber
 {
     /** @var StoreEventService */
-    private $service;
+    private StoreEventService $service;
 
     public function __construct(StoreEventService $service)
     {

@@ -10,7 +10,7 @@ use Shared\Domain\Bus\Event\StoredEvent;
 final class StoreEventService
 {
     /** @var EventStore */
-    private $eventStore;
+    private EventStore $eventStore;
 
     public function __construct(EventStore $eventStore)
     {

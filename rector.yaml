@@ -1,0 +1,8 @@
+parameters:
+  sets:
+#    - 'code-quality'
+    - 'php74'
+  paths:
+    - 'src'
+    - 'apps'
+  php_version_features: '7.4'

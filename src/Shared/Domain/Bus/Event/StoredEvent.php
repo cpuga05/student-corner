@@ -10,16 +10,11 @@ final class StoredEvent
 {
     /** @var int */
     private $id;
-    /** @var string */
-    private $eventId;
-    /** @var string */
-    private $aggregateId;
-    /** @var string */
-    private $name;
-    /** @var array */
-    private $body;
-    /** @var DateTimeImmutable */
-    private $occurredOn;
+    private string $eventId;
+    private string $aggregateId;
+    private string $name;
+    private array $body;
+    private DateTimeImmutable $occurredOn;
 
     public function __construct(
         string $eventId,

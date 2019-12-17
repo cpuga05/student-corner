@@ -9,13 +9,13 @@ use Shared\Domain\Bus\Command\Command;
 final class SendEmailCommand implements Command
 {
     /** @var string */
-    private $id;
+    private string $id;
     /** @var string */
-    private $email;
+    private string $email;
     /** @var string */
-    private $subject;
+    private string $subject;
     /** @var string */
-    private $body;
+    private string $body;
 
     public function __construct(string $id, string $email, string $subject, string $body)
     {

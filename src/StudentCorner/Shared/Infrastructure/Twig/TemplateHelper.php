@@ -11,7 +11,7 @@ use Twig\TwigFunction;
 final class TemplateHelper extends AbstractExtension
 {
     /** @var Authenticate */
-    private $authenticate;
+    private Authenticate $authenticate;
 
     public function __construct(Authenticate $authenticate)
     {

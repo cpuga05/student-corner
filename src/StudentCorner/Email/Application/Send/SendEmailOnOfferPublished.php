@@ -18,9 +18,9 @@ use StudentCorner\User\Domain\UserEmail;
 final class SendEmailOnOfferPublished implements DomainEventSubscriber
 {
     /** @var SendEmailService */
-    private $sender;
+    private SendEmailService $sender;
     /** @var QueryBus */
-    private $queryBus;
+    private QueryBus $queryBus;
 
     public function __construct(SendEmailService $service, QueryBus $queryBus)
     {
