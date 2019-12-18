@@ -11,8 +11,8 @@ services:
     resource: '../src/Command'
     tags: ['console.command']
 
-#  StudentTrackerWeb\Command\RabbitMq\ConfigureRabbitMqCommand:
-#    arguments:
-#      - '@Shared\Infrastructure\Queue\RabbitMq\RabbitMqConfigurator'
-#      - '%env(RABBITMQ_EXCHANGE)%'
-#      - !tagged event.consumer
+  StudentCornerWeb\Command\RabbitMq\ConfigureRabbitMqCommand:
+    arguments:
+      - '@Shared\Infrastructure\Queue\RabbitMq\RabbitMqConfigurator'
+      - '%env(RABBITMQ_EXCHANGE)%'
+      - !tagged event.consumer

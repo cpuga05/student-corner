@@ -35,10 +35,10 @@ services:
         port: '%elastic_port%'
     tags:
       - { name: shared.logger }
-    #
-    #  Shared\Infrastructure\Queue\RabbitMq\RabbitMqConnection:
-    #    arguments:
-    #      - '%rabbitmq_connection_parameters%'
+
+  Shared\Infrastructure\Queue\RabbitMq\RabbitMqConnection:
+    arguments:
+      - '%rabbitmq_connection_parameters%'
     #
     #  Shared\Infrastructure\Domain\Bus\Event\RabbitMqEventConsumer:
     #    arguments:

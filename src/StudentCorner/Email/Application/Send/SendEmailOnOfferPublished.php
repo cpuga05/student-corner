@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StudentCorner\Email\Application\Send;
 
+use Shared\Domain\Bus\Event\DomainEventConsumer;
 use Shared\Domain\Bus\Event\DomainEventSubscriber;
 use Shared\Domain\Bus\Query\QueryBus;
 use StudentCorner\Email\Domain\EmailBody;
@@ -14,7 +15,7 @@ use StudentCorner\User\Application\UserResponse;
 use StudentCorner\User\Application\View\ViewUserQuery;
 use StudentCorner\User\Domain\UserEmail;
 
-final class SendEmailOnOfferPublished implements DomainEventSubscriber
+final class SendEmailOnOfferPublished implements DomainEventConsumer
 {
     private SendEmailService $sender;
     private QueryBus $queryBus;
