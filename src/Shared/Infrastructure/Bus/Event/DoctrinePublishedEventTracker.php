@@ -39,7 +39,7 @@ final class DoctrinePublishedEventTracker implements PublishedEventTracker
             $publishedEvent = new PublishedEvent($channel, $lastId);
         }
 
-        $publishedEvent->updateLastId($lastId);
+        $publishedEvent->updateLastEventPublishedId($lastId);
         $this->entityManager->persist($publishedEvent);
         $this->entityManager->flush($publishedEvent);
     }
