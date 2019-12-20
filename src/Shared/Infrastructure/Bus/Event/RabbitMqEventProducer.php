@@ -8,8 +8,6 @@ use Shared\Domain\Bus\Event\EventProducer;
 use Shared\Domain\Bus\Event\StoredEvent;
 use Shared\Infrastructure\Queue\RabbitMq\RabbitMqConnection;
 
-use function dump;
-
 use const AMQP_NOPARAM;
 
 final class RabbitMqEventProducer implements EventProducer
@@ -33,7 +31,6 @@ final class RabbitMqEventProducer implements EventProducer
         $routingKey = $storedEvent->name();
         $messageId = $storedEvent->eventId();
 
-        dump($routingKey);
         $this->connection->exchange($this->exchange)->publish(
             $body,
             $routingKey,

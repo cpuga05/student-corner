@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Shared\Application\Event\Push;
 
+use Exception;
 use Shared\Domain\Bus\Event\EventProducer;
 use Shared\Domain\Bus\Event\EventStore;
 use Shared\Domain\Bus\Event\PublishedEventTracker;
 
-final class PushEventService
+final class PushEventsService
 {
     private EventStore $eventStore;
     private PublishedEventTracker $publishedEventTracker;
@@ -43,10 +44,13 @@ final class PushEventService
         $publishedEvents = 0;
         $lastStoredEvent = null;
 
-        foreach ($storedEvents as $storedEvent) {
-            $this->eventProducer->send($storedEvent);
-            $lastStoredEvent = $storedEvent;
-            $publishedEvents++;
+        try {
+            foreach ($storedEvents as $storedEvent) {
+                $this->eventProducer->send($storedEvent);
+                $lastStoredEvent = $storedEvent;
+                $publishedEvents++;
+            }
+        } catch (Exception $exception) {
         }
 
         $this->eventProducer->close($channel);

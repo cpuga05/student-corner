@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StudentCorner\Email\Application\Send;
 
+use Elasticsearch\Common\Exceptions\RuntimeException;
 use Shared\Domain\Bus\Event\DomainEventConsumer;
 use Shared\Domain\Bus\Event\DomainEventSubscriber;
 use Shared\Domain\Bus\Query\QueryBus;
