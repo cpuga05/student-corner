@@ -1,7 +1,10 @@
 RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
 
 console:
-	apps/StudentTracker/bin/console $(RUN_ARGS)
+	apps/StudentCornerWeb/bin/console $(RUN_ARGS)
+
+c:
+	@docker-compose exec student_corner.php php /app/apps/StudentCornerWeb/bin/console $(RUN_ARGS)
 
 mysql:
 	docker-compose up -d student_corner.mysql
