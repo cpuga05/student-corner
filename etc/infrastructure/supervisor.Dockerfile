@@ -17,3 +17,5 @@ RUN apk --update upgrade \
         opcache
 
 COPY php/ /usr/local/etc/php/
+COPY supervisor/supervisord.conf /etc/supervisord.conf
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]

@@ -12,7 +12,7 @@ final class PhpMailerFactory
     {
         $client = new PHPMailer(true);
         $client->isSMTP();
-        $client->Host = 'localhost';
+        $client->Host = 'shared.mailhog';
         $client->Port = 1_025;
         $client->setFrom('no-reply@student-corner.com', 'Student Corner Notification');
 

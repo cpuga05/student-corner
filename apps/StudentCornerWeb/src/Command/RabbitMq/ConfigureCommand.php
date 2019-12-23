@@ -12,7 +12,7 @@ use Traversable;
 
 use function iterator_to_array;
 
-final class ConfigureRabbitMqCommand extends Command
+final class ConfigureCommand extends Command
 {
     protected static $defaultName = 'rmq:configure';
     private RabbitMqConfigurator $configurator;
