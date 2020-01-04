@@ -1,0 +1,4 @@
+index_get:
+  path: /
+  controller: StudentCornerWeb\Controller\IndexController
+  methods: [GET]
