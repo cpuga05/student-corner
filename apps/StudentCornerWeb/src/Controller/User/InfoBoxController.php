@@ -7,6 +7,8 @@ namespace StudentCornerWeb\Controller\User;
 use Shared\Infrastructure\Symfony\Controller;
 use StudentCorner\Notification\Application\CounterNotificationsResponse;
 use StudentCorner\Notification\Application\UnreadCounter\UnreadCounterNotificationsQuery;
+use StudentCorner\OfferCounter\Application\OfferCounterResponse;
+use StudentCorner\OfferCounter\Application\Show\ShowOfferCounterQuery;
 use StudentCorner\Score\Application\ScoreResponse;
 use StudentCorner\Score\Application\Show\ShowScoreQuery;
 use StudentCorner\User\Application\UserResponse;
@@ -25,11 +27,14 @@ final class InfoBoxController extends Controller
         $score = $this->ask(new ShowScoreQuery($userId));
         /** @var CounterNotificationsResponse $unreadNotificationsCounter */
         $unreadNotificationsCounter = $this->ask(new UnreadCounterNotificationsQuery($userId));
+        /** @var OfferCounterResponse $offerCounter */
+        $offerCounter = $this->ask(new ShowOfferCounterQuery($userId));
 
         return $this->render('users/info-box.html.twig', [
             'user_email' => $user->email(),
             'score' => $score->point(),
             'unread_notifications_counter' => $unreadNotificationsCounter->counter(),
+            'offer_counter' => $offerCounter->total(),
         ]);
     }
 }

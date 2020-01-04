@@ -1,4 +1,4 @@
-index_get:
-  path: /
-  controller: StudentCornerWeb\Controller\IndexController
+api_offers:
+  path: /api/offers
+  controller: StudentCornerWeb\Controller\Api\Offers\OffersGetController
   methods: [GET]
