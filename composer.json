@@ -1,7 +1,7 @@
 {
   "name": "cpuga05/student-corner",
   "description": "Student Corner demo application",
-  "type": "metapackage",
+  "type": "library",
   "license": "MIT",
   "version":"1.0",
   "authors": [
