@@ -3,6 +3,7 @@
   "description": "Student Corner demo application",
   "type": "project",
   "license": "MIT",
+  "version":"1.0",
   "authors": [
     {
       "name": "Christian Puga",
